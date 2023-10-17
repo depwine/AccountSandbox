@@ -4,7 +4,7 @@ export const UserContext = createContext(null);
 
 export const UserProvider = ({ children }) => {
 
-  const [thing, setThing] = useState();
+  const [user, setUser] = useState();
 
     /* fetch if needed ?
   useEffect(() => {
@@ -24,7 +24,7 @@ export const UserProvider = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
-        thing, setThing
+        user, setUser
       }}
     >
       {children}

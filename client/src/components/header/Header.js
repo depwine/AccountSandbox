@@ -5,13 +5,13 @@ const Header = () => {
     return <>
         <Container>
             <Buttons>
-                <HomeButton>
+                <StyledButton>
                     Home
-                </HomeButton>
+                </StyledButton>
 
-                <ProfileButton>
+                <StyledButton>
                     Profile
-                </ProfileButton>
+                </StyledButton>
             </Buttons>
         </Container>
     </>
@@ -34,7 +34,7 @@ const Buttons = styled.div`
     color: white;
 `;
 
-const [ProfileButton, HomeButton]  = styled.span`
+const StyledButton = styled.span`
 
     padding: 0 10px;
     margin: 0 0 5px 0;

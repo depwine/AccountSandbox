@@ -9,6 +9,7 @@ const { deleteUser } = require("./handlers/deleteUser")
 // import the needed node_modules.
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors")
 const port = 8889;
 
 
@@ -19,6 +20,7 @@ express()
   // This will give us will log more info to the console. see https://www.npmjs.com/package/morgan
   .use(morgan("tiny"))
   .use(express.json())
+  .use(cors())
 
   // Any requests for static files will go into the public folder
   .use(express.static("public"))
@@ -38,7 +40,7 @@ express()
     })
 
     .get("/api/getAllUsers", getAllUsers)
-    .get("/api/getOneUser/:user", getOneUser)
+    .get("/api/getOneUser/:email/:password", getOneUser)
 
     .put("/api/putUpdatePassword", putUpdatePassword)
 

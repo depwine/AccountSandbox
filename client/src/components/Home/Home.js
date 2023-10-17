@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { useState, useContext} from "react";
+import LogIn from "./LogIn";
+import LoggedIn from "./LoggedIn";
 
 const Home = () => {
     return <>
         <Container>
-            Log In!
-            <LoginForm>
-
-            </LoginForm>
+            <LogIn/>
         </Container>
     </>
 }

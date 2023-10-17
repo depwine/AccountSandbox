@@ -8,10 +8,13 @@ const {MONGO_URI} = process.env;
 
   const getOneUser = async (req,res) => {
 
-    const body = req.params.user;
+    const body = req.params;
+
+    console.log(body)
 
     const searchQuery = {
-        email: body
+        email: body.email,
+        password: body.password
     }
 
     try{
@@ -33,13 +36,20 @@ const {MONGO_URI} = process.env;
                     status: 200,
                     data: results
                 })
+        } else {
+            res
+            .status(500)
+            .json({
+                status: 500,
+                message: `Failed to look up user ${body.email}, Reason: ${err}`
+            })
         }
 
     } catch (err) {
         res
             .status(500)
             .json({
-                status: 200,
+                status: 500,
                 message: `Failed to look up user ${searchQuery}, Reason: ${err}`
             })
     }
