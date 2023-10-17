@@ -23,18 +23,11 @@ const batchClearUsers = async () => {
         const db = client.db("AccountSandbox");
         console.log("Connected");
 
-        
-
-        const emptyUsers = []
-        const clearUserQuery = {}
-        const clearUserNewValue = {}
-
         const clearUsers = await db.collection("Users").drop()
 
         if (clearUsers) {
             console.log(`All Users Dropped: ${clearUsers}`);
-        }
-        
+        }       
 
 
     } catch (err) {

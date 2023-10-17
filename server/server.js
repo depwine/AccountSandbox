@@ -1,6 +1,10 @@
 "use strict";
 
 // const { postAllUsers } = require("./handlers/batchImportUsers")
+const { getAllUsers } = require("./handlers/getAllUsers");
+const { getOneUser } = require("./handlers/getOneUser");
+const { putUpdatePassword } = require("./handlers/putUpdatePassword");
+const { deleteUser } = require("./handlers/deleteUser")
 
 // import the needed node_modules.
 const express = require("express");
@@ -32,6 +36,13 @@ express()
         })
 
     })
+
+    .get("/api/getAllUsers", getAllUsers)
+    .get("/api/getOneUser/:user", getOneUser)
+
+    .put("/api/putUpdatePassword", putUpdatePassword)
+
+    .delete("/api/deleteUser", deleteUser)
 
 
   // add new endpoints here ☝️

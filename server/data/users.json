@@ -2,6 +2,7 @@
     {
         "user_id": "583c3ac3f38e83347c002546",
         "email": "glakeev@test.com",
+        "password": "test123",
         "name": "test@test.com",
         "given_name": "Glib",
         "family_name": "Lakeev",
@@ -16,6 +17,7 @@
     {
       "user_id": "583c3ac3f38e84297c002546",
       "email": "test@test.com",
+      "password": "test123",
       "name": "test@test.com",
       "given_name": "Hello",
       "family_name": "Test",
@@ -30,6 +32,7 @@
     {
       "user_id": "583c5484cb79a5fe593425a9",
       "email": "test1@test.com",
+      "password": "test123",
       "name": "test1@test.com",
       "given_name": "Hello1",
       "family_name": "Test1",
@@ -44,6 +47,7 @@
     {
       "user_id": "583c57672c7686377d2f66c9",
       "email": "aaa@aaa.com",
+      "password": "test123",
       "name": "aaa@aaa.com",
       "given_name": "John",
       "family_name": "Dough",
@@ -58,6 +62,7 @@
     {
       "user_id": "5840b954da0529cd293d76fe",
       "email": "a@a.com",
+      "password": "test123",
       "name": "a@a.com",
       "given_name": "Jane",
       "family_name": "Dough",
