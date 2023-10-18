@@ -45,6 +45,14 @@ const {MONGO_URI} = process.env;
                         message: `Password of user ${emailResult} successfully updated`,
                         status: 200
                     })
+            } else {
+                console.log("User password NOT updated!")
+                res
+                    .status(401)
+                    .json({
+                        message: `Password of user ${emailResult} NOT updated`,
+                        status: 401
+                    })
             }
         } else {
             res

@@ -5,6 +5,7 @@ const { getAllUsers } = require("./handlers/getAllUsers");
 const { getOneUser } = require("./handlers/getOneUser");
 const { putUpdatePassword } = require("./handlers/putUpdatePassword");
 const { deleteUser } = require("./handlers/deleteUser")
+const { postAddOneUser } = require ("./handlers/postAddOneUser")
 
 // import the needed node_modules.
 const express = require("express");
@@ -25,6 +26,8 @@ express()
   // Any requests for static files will go into the public folder
   .use(express.static("public"))
 
+  .disable('etag')
+
   // Nothing to modify above this line
   // ---------------------------------
   // add new endpoints here 👇
@@ -43,6 +46,8 @@ express()
     .get("/api/getOneUser/:email/:password", getOneUser)
 
     .put("/api/putUpdatePassword", putUpdatePassword)
+
+    .post("/api/postAddOneUser", postAddOneUser)
 
     .delete("/api/deleteUser", deleteUser)
 

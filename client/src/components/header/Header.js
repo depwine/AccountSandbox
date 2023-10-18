@@ -1,17 +1,30 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+
 
 
 const Header = () => {
+
+    const navigate = useNavigate();
+
+    const navToHome = () => {
+        navigate("/")
+    }
+
+    const navToProfile = () => {
+        navigate("/profile")
+    }
+
     return <>
         <Container>
             <Buttons>
-                <StyledButton>
+                <HomeButton onClick = {navToHome}>
                     Home
-                </StyledButton>
+                </HomeButton>
 
-                <StyledButton>
+                <ProfileButton onClick = {navToProfile}>
                     Profile
-                </StyledButton>
+                </ProfileButton>
             </Buttons>
         </Container>
     </>
@@ -34,7 +47,7 @@ const Buttons = styled.div`
     color: white;
 `;
 
-const StyledButton = styled.span`
+const HomeButton = styled.span`
 
     padding: 0 10px;
     margin: 0 0 5px 0;
@@ -48,3 +61,5 @@ const StyledButton = styled.span`
     }
 
 `;  
+
+const ProfileButton = HomeButton;

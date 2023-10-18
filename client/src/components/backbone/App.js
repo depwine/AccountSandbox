@@ -2,9 +2,10 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import Header from "../header/Header"
-import Main from "../main/Main";
 import Home from "../Home/Home";
 import Profile from "../profile/Profile";
+import CreateAccount from "../Home/CreateAccount"
+import ChangePassword from "../profile/ChangePassword"
 
 const App = () => {
   return (
@@ -14,14 +15,16 @@ const App = () => {
       <Container>
 
         <Header/>
-        <Main>
 
-        <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/profile" element={<Profile />} />
-        </Routes>
 
-        </Main>
+          <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/create-account" element={<CreateAccount />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/change-password" element={<ChangePassword />} />
+          </Routes>
+
+
 
 
       </Container>

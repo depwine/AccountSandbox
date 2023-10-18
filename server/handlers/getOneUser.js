@@ -47,10 +47,10 @@ const {MONGO_URI} = process.env;
 
     } catch (err) {
         res
-            .status(500)
+            .status(401)
             .json({
-                status: 500,
-                message: `Failed to look up user ${searchQuery}, Reason: ${err}`
+                status: 401,
+                message: `Failed to look up user ${body.email}, Reason: Email or Password Incorrect`
             })
     }
 

@@ -2,11 +2,23 @@ import styled from "styled-components";
 import { useState, useContext} from "react";
 import LogIn from "./LogIn";
 import LoggedIn from "./LoggedIn";
+import { UserContext } from "../backbone/UserContext";
+
+
 
 const Home = () => {
+
+    const { user } = useContext(UserContext)
+
+
     return <>
         <Container>
-            <LogIn/>
+
+            {user.given_name
+                ? <LoggedIn/>
+                : <LogIn/>            
+            }
+
         </Container>
     </>
 }
